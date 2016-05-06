@@ -10,7 +10,7 @@ def _package_names(args):
     if args.file:
         with open(args.file, 'r') as fid:
             for package in fid.readlines():
-                if package and not package.startswith('#'):
+                if package and not package.strip().startswith('#'):
                     yield package.strip()
     elif not args.package:
         print("Provide a package name")
